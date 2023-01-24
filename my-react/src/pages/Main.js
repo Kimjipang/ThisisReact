@@ -21,13 +21,13 @@ function Main() {
         <div>
           <Header>메인 페이지</Header>
 
-          <FootButton
+          <StyleButton
             onClick={() => {
               navigate("/login");
             }}
           >
-            {login ? "login" : "alreadyLogin"}
-          </FootButton>
+            Login
+          </StyleButton>
 
           <StyleButton
             onClick={() => {

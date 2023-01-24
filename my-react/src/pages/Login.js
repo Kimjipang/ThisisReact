@@ -38,6 +38,10 @@ function Login() {
               localStorage.clear();
               localStorage.setItem("id", response.data.user.id);
               localStorage.setItem("access token", response.data.token.access);
+              localStorage.setItem(
+                "refresh token",
+                response.data.token.refresh
+              );
               if (response.status === 200) {
                 navigate("/");
               }
