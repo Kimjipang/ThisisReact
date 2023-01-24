@@ -34,14 +34,12 @@ function Login() {
               password: password,
             })
             .then(function (response) {
-              console.log(response);
+              console.log(response.data);
+              localStorage.clear();
+              localStorage.setItem("id", response.data.user.id);
+              localStorage.setItem("access token", response.data.token.access);
               if (response.status === 200) {
-                localStorage.setItem(
-                  "access-token",
-                  response.data.access_token
-                );
-                console.log("access_token", response.data.access_token);
-                // navigate("/");
+                navigate("/");
               }
             })
             .catch(function (error) {
